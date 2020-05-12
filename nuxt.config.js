@@ -45,6 +45,9 @@ module.exports = {
    */
   vuetify: {
     customVariables: ['~/assets/variables.scss'],
+    defaultAssets: {
+      icons: 'md'
+    },
     theme: {
       dark: true,
       themes: {
