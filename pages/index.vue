@@ -74,8 +74,15 @@ export default {
           room: this.room
         }
 
-        this.setUser(user)
-        this.$router.push('/chat')
+        this.$socket.emit('userJoined', user, (data) => {
+          if (typeof data === 'string') {
+            console.log(data)
+          } else {
+            user.id = data.userId
+            this.setUser(user)
+            this.$router.push('/chat')
+          }
+        })
       }
     }
   }
