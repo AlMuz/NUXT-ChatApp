@@ -6,15 +6,13 @@ const formatMessage = (name, text, id) => ({ name, text, id })
 
 io.on('connection', (socket) => {
   socket.on('createMessage', (data) => {
+    console.log(data)
+
     setTimeout(() => {
-      socket.emit(
-        'newMessage',
-        {
-          text: `${data.text} server`
-        },
-        1000
-      )
-    })
+      socket.emit('newMessage', {
+        text: `${data.text}`
+      })
+    }, 1000)
   })
 
   socket.on('userJoined', (data, cb) => {
@@ -25,6 +23,7 @@ io.on('connection', (socket) => {
     socket.join(data.room)
     cb({ userId: socket.id })
     socket.emit('newMessage', formatMessage('admin', `Welcome ${data.name}!`))
+    socket.emit('newMessage', formatMessage('Alexey', `HI!!`))
     socket.broadcast
       .to(data.room)
       .emit(

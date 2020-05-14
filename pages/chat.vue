@@ -11,16 +11,20 @@
         />
       </ul>
     </div>
-    <div class="chat__form"></div>
+    <div class="chat__form">
+      <ChatForm />
+    </div>
   </div>
 </template>
 
 <script>
 import Message from '@/components/Message'
+import ChatForm from '@/components/ChatForm'
 import { mapState } from 'vuex'
 export default {
   components: {
-    Message
+    Message,
+    ChatForm
   },
   head() {
     return {
