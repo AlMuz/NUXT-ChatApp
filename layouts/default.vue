@@ -1,6 +1,6 @@
 <template>
   <v-app app dark>
-    <v-navigation-drawer app v-model="drawer">
+    <v-navigation-drawer app v-model="drawer" mobile-break-point="650">
       <v-list subheader>
         <v-subheader>List of users in room</v-subheader>
         <v-list-item v-for="user in users" :key="user.id" @click.prevent>
@@ -24,7 +24,7 @@
       <v-app-bar-title>Chat page {{ user.name }}</v-app-bar-title>
     </v-app-bar>
     <v-content>
-      <div>
+      <div class="fullHeight">
         <nuxt />
       </div>
     </v-content>
@@ -57,3 +57,9 @@ export default {
   }
 }
 </script>
+
+<style lang="scss" scoped>
+.fullHeight {
+  height: 100%;
+}
+</style>
