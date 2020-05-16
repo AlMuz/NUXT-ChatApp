@@ -21,7 +21,7 @@
       <v-btn icon @click="exit">
         <v-icon>arrow_back</v-icon>
       </v-btn>
-      <v-app-bar-title>Chat page {{ user.name }}</v-app-bar-title>
+      <v-toolbar-title>Chat page {{ user.name }}</v-toolbar-title>
     </v-app-bar>
     <v-content>
       <div class="fullHeight">
