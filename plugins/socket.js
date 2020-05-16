@@ -6,7 +6,7 @@ export default function({ store }) {
   Vue.use(
     new VueSocketIO({
       debug: false,
-      connection: SocketIO('http://localhost:3000'),
+      connection: SocketIO('/'),
       vuex: {
         store,
         actionPrefix: 'SOCKET_',
